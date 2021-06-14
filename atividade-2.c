@@ -1,19 +1,25 @@
-#include <stdio.h> 
-#include <math.h>//biblioteca para entrada, saida, formulas matematica e funções
-#include <stdlib.h>
+//2. Efetuar a leitura de um número e apresentá-lo como o seu módulo (somente seu valor
+//absoluto) elaborando os cálculos matemáticos para isso
 
-int main(){ //função principal do programa
-  
-    float area, raio;//variavel para numero reais
-    //sistema para recebe informação do usuario
-	printf("digite o raio da circuferencia: ");
-	scanf("%f", &raio);
-	//formula para calcular area de uma circuferencia
-	area = M_PI * raio * raio;
-	//mostra para o usuario o resutado da equação
-	printf ("A area do circulo : %f\n",area);
+#include <stdlib.h>
+#include<stdio.h>
+#include<locale.h>
+
+int main(){
+	int n1, modulo;
 	
-	system("pause");	
+	setlocale(LC_ALL, "Portuguese");
+	printf("Digite um número para que eu calcule o módulo dele\n");
+	printf("Número: ");
+	scanf("%i", &n1);
+	
+	if(n1 < 0){
+		modulo = n1 * -1;
+	} else {
+		modulo = n1;
+	}
+	
+	printf("O módulo do número que você digitou é %i\n\n", modulo);
+	system("PAUSE");
 	return 0;
-	
 }

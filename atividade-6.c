@@ -1,19 +1,19 @@
-#include <stdio.h>
+// 6. Escrever um algoritmo que determine se um número inteiro qualquer é PAR ou IMPAR.
+#include<stdio.h>
 #include <stdlib.h>
+#include<locale.h>
 
 int main(){
-	/*variaveis para serem declaradas*/
-	float notaA, notaB, notaF;
-	/*campo para digitar o valor da primeira nota*/
-	printf("Digite a nota da prova A: ");
-	scanf("%f", &notaA);
-	/*campo para digitar o valor da segunda nota*/
-	printf("Digite a nota da prova B: ");
-	scanf("%f", &notaB);
-	/*formula para achar media ponderada com peso 3.5 e 7.5*/
-	notaF = ((notaA * 3.5) + (notaB * 7.5)) / 11 ;
-	/*mostra a media na tela*/
-	printf("\nA media das notas: %5.2f\n", notaF);
-	system("pause");
+	setlocale(LC_ALL, "Portuguese");
+	int inteiro;
+	printf("Digite um número inteiro qualquer: ");
+	scanf("%i", &inteiro);
+	
+	if(inteiro % 2 == 0) printf("O número é par");
+	else printf("O número é impar");
+	
+	printf("\n\n");
+	system("PAUSE");
+	
 	return 0;
 }

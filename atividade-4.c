@@ -1,25 +1,48 @@
-#include <stdio.h>
+//4. Desenvolver um algoritmo que leia o nome e o sexo de uma pessoa e apresente como saída
+// uma das seguintes mensagens: “Ilmo. Sr.”, para o sexo masculino ou “Ilma. Sra.” para o sexo
+// feminino, acrescentando o nome em seguida. Observe o exemplo de um resultado:
+// Ilma Sra. Ana Rita
+
 #include <stdlib.h>
-#include <math.h>
+#include<stdio.h>
+#include<locale.h>
 
 int main(){
-	/*Variaveis para indica dividendo,divisor,resultdo e resto*/
-	int number1, number2, result, rest;
-	/*printf e scanf para ser digitado um dividendo*/ 
-	printf("Digite um dividendo: ");
-	scanf("%d", &number1);
-	/*printf e scanf para ser digitado um divisor*/ 
-	printf("Digite divisor: ");
-	scanf("%d", &number2);
-	/*calculo para achar o resultdo e printf para mostra a tela para o usuario*/
-	result = number1 / number2;
-	printf("\nO resultado: %d", result);
-	/*calculo para achar o resto e printf para mostra a tela para o usuario*/
-	rest = number1 % number2;
-	printf("\nO resto: %d\n", rest);
-	/*system pause pra para o debuging*/ 
-	system("pause");
-	/*return 0 para retorna o programa para o inicio no caso 0*/ 
-	return 0;
+	char nome[40];
+	char sexo;
+	double altura, pesoIdeal;
 	
+	
+	printf("Digite seu nome: ");
+	scanf("%s", &nome);
+	fflush(stdin);
+	
+	printf("Digite seu sexo(m -> masculino, f -> feminino): ");
+	scanf("%c", &sexo);
+	fflush(stdin);
+	
+	printf("Digite sua altura: ");
+	scanf("%lf", &altura);
+	fflush(stdin);
+
+	setlocale(LC_ALL, "Portuguese");
+
+	switch(sexo){
+		case 'm': 
+			pesoIdeal = ((72.5 * altura) - 58);		
+			printf("Ilmo. Sr. %s \n", nome); 
+			printf("Seu peso ideal é %.2f", pesoIdeal);
+			break;
+		case 'f': 
+			pesoIdeal = (62.1 * altura) - 44.7;
+			printf("Ilma. Sra. %s \n", nome);
+			printf("Seu peso ideal é %.2f", pesoIdeal);
+			break;
+		default:  printf("Valor do sexo digitado incorretamente.");
+	}
+	
+	printf("\n\n");
+	system("PAUSE");
+	
+	return 0;
 }
